@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/songquanpeng/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+  <a href="https://github.com/songquanpeng/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/default/public/logo.png" width="150" height="150" alt="one-api logo"></a>
 </p>
 
 <div align="center">
@@ -135,12 +135,12 @@ sudo service nginx restart
    git clone https://github.com/songquanpeng/one-api.git
 
    # フロントエンドのビルド
-   cd one-api/web
+   cd one-api/web/default
    npm install
    npm run build
 
    # バックエンドのビルド
-   cd ..
+   cd ../..
    go mod download
    go build -ldflags "-s -w" -o one-api
    ```

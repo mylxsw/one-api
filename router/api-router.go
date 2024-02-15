@@ -1,8 +1,8 @@
 package router
 
 import (
-	"one-api/controller"
-	"one-api/middleware"
+	"github.com/songquanpeng/one-api/controller"
+	"github.com/songquanpeng/one-api/middleware"
 
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
@@ -35,6 +35,7 @@ func SetApiRouter(router *gin.Engine) {
 			selfRoute := userRoute.Group("/")
 			selfRoute.Use(middleware.UserAuth())
 			{
+				selfRoute.GET("/dashboard", controller.GetUserDashboard)
 				selfRoute.GET("/self", controller.GetSelf)
 				selfRoute.PUT("/self", controller.UpdateSelf)
 				selfRoute.DELETE("/self", controller.DeleteSelf)
